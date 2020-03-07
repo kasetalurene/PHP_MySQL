@@ -1,4 +1,12 @@
-<?php include('../config.php'); ?>
+<?php include('../config_.php');
+
+/**
+ *file name: katsetused.php;
+ *autor: Rene Kasetalu;
+ *date: 07.03.2020
+ *projekt:  http://kasetalurene.ikt.khk.ee/PHP_MySQL/
+ */
+?>
 <?php
 if (!empty($_GET['artist']) && !empty($_GET['album']) && !empty($_GET['aasta']) &&  !empty($_GET['hind']) ) {
     $artist = htmlspecialchars(trim($_GET['artist']));

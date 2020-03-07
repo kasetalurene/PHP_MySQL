@@ -1,5 +1,5 @@
 <?php
-include('config.php'); //andmebaasi paroolid ja ühendus on teises failis
+include('../config_.php'); //andmebaasi paroolid ja ühendus on teises failis
 $paring = 'SELECT * FROM albumid';
 $valjund = mysqli_query($yhendus, $paring);
 while($rida = mysqli_fetch_array($valjund)){

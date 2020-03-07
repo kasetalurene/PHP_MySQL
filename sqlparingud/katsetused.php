@@ -1,4 +1,13 @@
-<?php include('../config_.php'); ?>
+<?php include('../config_.php');
+
+/**
+*file name: katsetused.php;
+*autor: Rene Kasetalu;
+*date: 07.03.2020
+*projekt:  http://kasetalurene.ikt.khk.ee/PHP_MySQL/
+*/
+ ?>
+
 <?php
 if (!empty($_GET['otsi'])) {
     //kasutaja tekst vormist

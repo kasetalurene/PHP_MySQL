@@ -67,3 +67,8 @@ mysqli_free_result($valjund); //pärinug vabastamine
 mysqli_close($yhendus);       //andmebaasi sulgemine
 
 ?>
+
+<form method="get" action="">
+    Otsing <input type="text" name="otsi">
+    <input type="submit" value="otsi...">
+</form>

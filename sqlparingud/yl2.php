@@ -12,11 +12,12 @@ include('../config_.php'); //andmebaasi paroolid ja ühendus on teises failis
 //Väljasta kogu ‘albumid’ sisu ridade kaupa
 $paring = 'SELECT * FROM albumid';                //mysql käsk VALI kõik veerud TABELIST albumid
 $valjund = mysqli_query($yhendus, $paring);        //mysql käsu saatmine andmebaasile
-while ($rida = mysqli_fetch_row($valjund)) {        //vastus andmebaasist
+while ($rida = mysqli_fetch_row($valjund)) {         //vastus andmebaasist
     //var_dump($rida);
-    echo 'Album: ' . $rida[1] . ' - ' . $rida[2] . '<br>';
+    echo 'Artist:' . $rida[1] .'<br>';
+    echo 'Album: ' . $rida[2] . '<br>';
     echo 'Aasta: ' . $rida[3] . '<br>';
-    echo 'Žanr: ' . $rida[4] . '<br>';
+    echo 'Hind: ' . $rida[4] . '<br>';
 }
 echo '<br><hr><br>';
 
@@ -46,11 +47,11 @@ while($rida = mysqli_fetch_assoc($valjund)){
 }
 echo '<br><hr><br>';
 
-//Väljasta kõige vanema albumi nimed
-$paring5 = 'SELECT album, aasta, MAX(aasta) AS "Kõige vanem" FROM albumid';
+//Väljasta kõige vanema albumi nimi
+$paring5 = 'SELECT album, aasta, MIN(aasta) AS "Kõige vanem" FROM albumid';
 $valjund = mysqli_query($yhendus, $paring5);
 while($rida = mysqli_fetch_assoc($valjund)){
-    echo 'kõige vanema albumi nimi: '.$rida['aasta'].' - '.$rida['album'];
+    echo 'kõige vanem album: '.$rida['aasta'].' - '.$rida['album'];
 }
 echo '<br><hr><br>';
 

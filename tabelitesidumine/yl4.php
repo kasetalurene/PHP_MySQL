@@ -1,4 +1,4 @@
-?php include('../config_.php'); ?>
+<?php include('../config_.php'); ?>
 <?php
 $paring = "SELECT arved.arve_nr, albumid.artist, albumid.album, kliendid.eesnimi, kliendid.perenimi
 			FROM arved
@@ -7,7 +7,7 @@ $paring = "SELECT arved.arve_nr, albumid.artist, albumid.album, kliendid.eesnimi
 $valjund = mysqli_query($yhendus, $paring);
 while($rida = mysqli_fetch_assoc($valjund)){
     echo 'Arve number: '.$rida['arve_nr'].'<br>';
-    echo 'Albumi nimi: '.$rida['artist'].'-'.$rida['album'].'<br>';
+    echo 'Albumi nimi: '.$rida['album'].'<br>';
     echo 'Kliendi nimi: '.$rida['eesnimi'].' '.$rida['perenimi'].'<br><br>';
 }
 mysqli_free_result($valjund);

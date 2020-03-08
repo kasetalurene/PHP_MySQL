@@ -6,7 +6,7 @@ $paring = "SELECT arved.arve_nr, albumid.artist, albumid.album
 $valjund = mysqli_query($yhendus, $paring);
 while($rida = mysqli_fetch_assoc($valjund)){
     echo 'Arve number: '.$rida['arve_nr'].'<br>';
-    echo 'Albumi nimi: '.$rida['artist'].'-'.$rida['album'].'<br><br>';
+    echo 'Toote nimetus: '.$rida['artist'].'-'.$rida['album'].'<br><br>';
 }
 mysqli_free_result($valjund);
 mysqli_close($yhendus);

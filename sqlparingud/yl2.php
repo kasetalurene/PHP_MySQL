@@ -30,10 +30,10 @@ while($rida = mysqli_fetch_assoc($valjund)){
 echo '<br><hr><br>';
 
 //Väljasta tabelist ainult artist ja album read, mille aasta on 2010 ja uuemad
-$paring3 = 'SELECT artist, album FROM albumid WHERE aasta>2010';
+$paring3 = 'SELECT artist, album FROM albumid WHERE aasta>=2010';
 $valjund = mysqli_query($yhendus, $paring3);
 while($rida = mysqli_fetch_assoc($valjund)){
-    echo $rida['artist'].' - '.$rida['album'];
+    echo $rida['artist'].' - '.$rida['album'].'<br>';
 }
 echo '<br><hr><br>';
 
@@ -48,10 +48,10 @@ while($rida = mysqli_fetch_assoc($valjund)){
 echo '<br><hr><br>';
 
 //Väljasta kõige vanema albumi nimi
-$paring5 = 'SELECT album, aasta, MIN(aasta) AS "Kõige vanem" FROM albumid';
+$paring5 = 'SELECT album, MIN(aasta) FROM albumid';
 $valjund = mysqli_query($yhendus, $paring5);
 while($rida = mysqli_fetch_assoc($valjund)){
-    echo 'kõige vanem album: '.$rida['aasta'].' - '.$rida['album'];
+    echo 'kõige vanem album: '.$rida['album'].'<br>';
 }
 echo '<br><hr><br>';
 
@@ -59,7 +59,7 @@ echo '<br><hr><br>';
 $paring6 = 'SELECT album FROM albumid WHERE hind > (SELECT AVG(hind) FROM albumid)';
 $valjund = mysqli_query($yhendus, $paring6);
 while($rida = mysqli_fetch_assoc($valjund)){
-    echo 'keskmisest suurem hind: '.$rida['album'];
+    echo 'keskmisest suurem hind: '.$rida['album'].'<br>';
 }
 echo '<br><hr><br>';
 
